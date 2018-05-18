@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from .serializers import SampleSerializer
 from .serializers import LeadSerializer
-from app.models import Lead
+from backend.models import Lead
 
 #UTIL
 import json
@@ -39,7 +39,7 @@ def sample(request):
     context = {}
     context['sample_key'] = 'hello world'
 
-    return render(request, 'app/sample.html', context)
+    return render(request, 'backend/sample.html', context)
     #return JsonResponse({'a':'b'})
 
 class SampleView(CreateAPIView):

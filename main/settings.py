@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
-    'app',
+    'backend',
     'frontend',
 ]
 
@@ -38,7 +38,7 @@ TEMPLATES = [
         'BACKEND': 'djangomako.backends.MakoBackend',
         'NAME': 'mako',
         'DIRS': [
-            BASE_DIR + '/app/templates/',
+            BASE_DIR + '/backend/templates/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -113,5 +113,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR + '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR + '/app/static/'
+    BASE_DIR + '/backend/static/'
 ]

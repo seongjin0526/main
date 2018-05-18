@@ -1,6 +1,6 @@
 [
     {
-        "model": "app.lead",
+        "model": "backend.lead",
         "pk": 1,
         "fields": {
             "name": "Armin",
@@ -10,7 +10,7 @@
         }
     },
     {
-        "model": "app.lead",
+        "model": "backend.lead",
         "pk": 2,
         "fields": {
             "name": "Tom",
