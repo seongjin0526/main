@@ -3,3 +3,4 @@
 *.swp
 /media
 /node_modules
+/.idea
