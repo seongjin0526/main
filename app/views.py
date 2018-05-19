@@ -28,7 +28,7 @@ def sample(request):
         cur.execute(query)
         rows = cur.fetchall()
     """
-    
+
     context = {}
     context['sample_key'] = 'sample_val'
 
@@ -40,8 +40,36 @@ class SampleView(CreateAPIView):
     serializer_class = SampleSerializer
 
     def create(self, request):
- 
+
         id = request.POST.get('id')
         print("id = ", id)
 
         return Response({"result": "ok"})
+
+
+def index(request):
+
+    """
+    making logic
+    """
+
+    """
+    with connections['default'].cursor() as cur:
+        query = '''
+            select *
+            FROM table
+            where sample = '{page}'
+        '''.format(page=page)
+        cur.execute(query)
+        rows = cur.fetchall()
+    """
+
+    hello_list = []
+    hello_list.append('a')
+    hello_list.append('b')
+    hello_list.append('c')
+
+    context = {}
+    context['hello_list'] = hello_list
+
+    return render(request, 'app/index.html', context)

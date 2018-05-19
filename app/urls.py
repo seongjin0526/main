@@ -15,4 +15,5 @@ urlpatterns = [
 
     # main-url
     url('sample$', views.sample, name='sample'),
+    url('$', views.index, name='index'),
 ]
