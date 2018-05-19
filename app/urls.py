@@ -15,5 +15,6 @@ urlpatterns = [
 
     # main-url
     url('sample$', views.sample, name='sample'),
-    url('$', views.index, name='index'),
+    path('', views.index, name='index'),
+    url('inner/(?P<page_id>[0-9]{1,4})$', views.inner, name='inner'),
 ]

@@ -53,6 +53,27 @@ def index(request):
     making logic
     """
 
+
+    with connections['default'].cursor() as cur:
+        query = '''
+            select subject, content, sumnail_id, DATE_FORMAT(create_date, "%Y.%m.%d %H:%i")
+            from video_store
+        '''
+        cur.execute(query)
+        rows = cur.fetchall()
+
+    context = {}
+    context['video_list'] = rows
+
+    return render(request, 'app/index.html', context)
+
+
+def inner(request, page_id):
+
+    """
+    making logic
+    """
+
     """
     with connections['default'].cursor() as cur:
         query = '''
@@ -64,12 +85,8 @@ def index(request):
         rows = cur.fetchall()
     """
 
-    hello_list = []
-    hello_list.append('a')
-    hello_list.append('b')
-    hello_list.append('c')
-
     context = {}
-    context['hello_list'] = hello_list
+    context['sample_key'] = 'sample_val'
 
-    return render(request, 'app/index.html', context)
+    return render(request, 'app/inner.html', context)
+    #return JsonResponse({'a':'b'})
